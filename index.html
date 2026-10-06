@@ -802,6 +802,78 @@
       border-radius: var(--radius-sm);
       padding: 12px 14px;
     }
+    /* 麵包超人博物館專屬攻略卡片樣式 */
+    .anpanman-guide-box {
+      margin-top: 14px;
+      background: #FFFDF7;
+      border: 2px dashed #E8A838;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+    .anpanman-guide-title {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #C84B31;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      border-bottom: 1.5px dashed #F5C6AA;
+      padding-bottom: 6px;
+    }
+    .anpanman-show-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #F0DFCE;
+    }
+    .anpanman-show-table th {
+      background: #FFE8D6;
+      color: #8C4307;
+      padding: 6px 10px;
+      text-align: left;
+      font-weight: 800;
+    }
+    .anpanman-show-table td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #F7ECE1;
+      line-height: 1.4;
+    }
+    .anpanman-steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .anpanman-step-item {
+      background: #FFFFFF;
+      border: 1.2px solid #F4E2D0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+    .anpanman-step-header {
+      font-weight: 900;
+      color: #D94638;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .anpanman-tips-pill {
+      background: #FFF0E6;
+      border: 1px solid #F5C6AA;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      color: #8C4307;
+      line-height: 1.45;
+    }
     .timetable-title {
       font-size: 0.88rem;
       font-weight: 900;
@@ -1454,6 +1526,96 @@
                 <a href="https://www.google.com/maps/dir/?api=1&destination=仙台アンパンマンこどもミュージアム＆モール" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
                 <button class="spot-preview-btn" onclick="handleSpotClick('anpanman')">🗺️ 地圖定位</button>
               </div>
+
+              <!-- 麵包超人表演時刻表與錯峰遊玩全攻略 -->
+              <div class="anpanman-guide-box">
+                <div class="anpanman-guide-title">
+                  <span>👶 1歲寶寶免排隊！麵包超人表演時刻與高勝率動線攻略</span>
+                </div>
+
+                <!-- 表演時刻表概況 -->
+                <div style="font-weight: 800; font-size: 0.84rem; color: #B05C10; margin-bottom: 6px;">
+                  🎭 平日劇場表演時刻（建議以入場時當日單張為準）
+                </div>
+                <div style="overflow-x: auto;">
+                  <table class="anpanman-show-table">
+                    <thead>
+                      <tr>
+                        <th>時間</th>
+                        <th>地點</th>
+                        <th>節目與內容</th>
+                        <th>攻略要點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>11:00</strong></td>
+                        <td>2F 柳瀨嵩劇場</td>
+                        <td>經典唱跳 Mini Live Show（約15-20分）</td>
+                        <td><span style="color:#C84B31; font-weight:800;">⭐ 必看！</span>10:45 提早佔地毯席前排</td>
+                      </tr>
+                      <tr>
+                        <td><strong>12:00-12:30</strong></td>
+                        <td>2F 街道/廣場</td>
+                        <td>角色驚喜突擊見面會 (Greeting)</td>
+                        <td>隨機玩偶巡迴互動合照</td>
+                      </tr>
+                      <tr>
+                        <td><strong>13:00/14:30</strong></td>
+                        <td>2F 柳瀨嵩劇場</td>
+                        <td>下午場唱跳秀 / 節慶特別活動</td>
+                        <td>早場錯過的備用場次（此時寶寶易斷電）</td>
+                      </tr>
+                      <tr>
+                        <td><strong>全天不定時</strong></td>
+                        <td>2F 嬰兒超人露台</td>
+                        <td>大姊姊帶動跳、手作紙面具、繪本時間</td>
+                        <td>0~2 歲幼兒隨時可加入的軟墊地盤</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- 六大錯峰遊玩步驟 -->
+                <div style="font-weight: 800; font-size: 0.84rem; color: #B05C10; margin-bottom: 6px;">
+                  🏃‍♂️ 6 步驟錯峰逆向遊玩動線（玩得最多、避開人潮）：
+                </div>
+                <div class="anpanman-steps-list">
+                  <div class="anpanman-step-item">
+                    <div class="anpanman-step-header">Step 1：10:00 開館直奔 1F「細菌人秘密基地」</div>
+                    <div>趁 90% 遊客搭手扶梯直衝 2F，此時 1F 幾乎包場！全軟墊地面、巨大細菌人機械眼與地面互動投影，非常適合 1 歲剛會走爬的寶寶放肆探索。</div>
+                  </div>
+                  <div class="anpanman-step-item">
+                    <div class="anpanman-step-header">Step 2：10:35 先買 1F「果醬叔叔麵包工坊」免排隊</div>
+                    <div>中午後會排 30 分鐘且熱門款售罄。10:35 先買好招牌造型麵包放包包當點心，免排隊又安心！</div>
+                  </div>
+                  <div class="anpanman-step-item">
+                    <div class="anpanman-step-header">Step 3：10:45 移師 2F「柳瀨嵩劇場」搶佔 11:00 首場大秀</div>
+                    <div>推車停放 1F，<strong>換上嬰兒背巾上樓</strong>（2F 不能推車）。提早 15 分鐘佔地毯前排席，麵包超人與細菌人近距離跳舞震撼力十足！</div>
+                  </div>
+                  <div class="anpanman-step-item">
+                    <div class="anpanman-step-header">Step 4：11:30~12:15 錯峰吃早午餐（不擠位）</div>
+                    <div>表演一結束立刻回 1F 美食街。推薦吃「附陶瓷麵包超人兒童碗（可帶回家）」的烏龍麵，清淡易剪碎，搭配剛剛買的麵包輕鬆飽餐。</div>
+                  </div>
+                  <div class="anpanman-step-item">
+                    <div class="anpanman-step-header">Step 5：12:20~13:30 探索 2F 擬真小鎮與嬰兒超人露台</div>
+                    <div>趁別人在樓下吃飯，2F 設施最好玩！在「大家的街道」體驗拔蘿蔔煮飯、「麵包超人號」駕駛艙轉方向盤，最後在專屬幼兒的全軟墊「嬰兒超人露台」玩布偶積木放電。</div>
+                  </div>
+                  <div class="anpanman-step-item">
+                    <div class="anpanman-step-header">Step 6：13:30~14:00 買仙台限定紀念品 ➔ 上推車秒睡</div>
+                    <div>1F 採買<strong>「仙台限定伊達政宗造型麵包超人吊飾/毛巾」</strong>，育嬰室換尿布喝奶後放回嬰兒車。推車前往定禪寺通時，寶寶 100% 在樹蔭涼風下秒睡熟睡！</div>
+                  </div>
+                </div>
+
+                <!-- 親子貼心裝備 Tips -->
+                <div class="anpanman-tips-pill">
+                  🍼 <strong>倍果小隊 3 大實用 Tips：</strong>
+                  <br>1. <strong>必備嬰兒背巾</strong>：2F 展館與劇場全面禁止嬰兒推車，背巾抱著大人省力、寶寶安心看秀。
+                  <br>2. <strong>免費手作紙面具</strong>：2F 隨時可免費領取麵包超人紙遮陽帽/面具，工作人員會幫忙蓋印章，戴著拍照超可愛！
+                  <br>3. <strong>神級育嬰室設施</strong>：館內提供 70°C 泡奶熱水、微波爐、急用尿布機，臨時有需求完全免擔心。
+                </div>
+              </div>
+
               <div class="spot-story-box">
                 <strong>💡 趣味小知識：</strong>麵包超人名列金氏世界紀錄登場角色最多的動畫（超過 1,768 位）！1F 免費購物區的「果醬叔叔麵包工坊」每天現烤真實麵包超人臉龐，紅豆內餡香甜又可愛。
               </div>
@@ -1645,7 +1807,7 @@
                 <button class="spot-preview-btn" onclick="handleSpotClick('tsutanuma')">🗺️ 地圖定位</button>
               </div>
               <div class="spot-story-box">
-                <strong>💡 秘境小秘密：</strong>蔦沼以清晨「朝燒（宛如燃燒般的赤紅倒影）」聞名世界，早上 9:00 過後人潮漸散、陽光穿透原始山毛櫸樹梢，水面如明鏡般倒映金黃秋意，更加靜謐怡人。
+                <strong>💡 秘境小秘密與小隊利多：</strong>官方 2026 年蔦沼交通管制實施期為 <strong>10/23～11/3</strong>，我們 10/21造訪<strong>完美避開管制期</strong>！免早鳥預約、免繳 ¥2,000 協力金，停車自由進出！早上 09:00 人潮散去、陽光穿透原始山毛櫸樹梢，水面如明鏡般倒映金黃秋意，更加靜謐怡人。
               </div>
             </div>
 
