@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍁 2026 秋・倍果追楓小隊 | 東北紅葉親子自駕遊</title>
+  
+  <!-- Google Fonts: 日系圓體 & 手帳感字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Yuji+Boku&display=swap" rel="stylesheet">
+
+  <style>
+    /* いらすとや (Irasutoya) 風格色彩系統 */
+    :root {
+      --bg-cream: #FCF7EE;
+      --card-bg: #FFFFFF;
+      --paper-cream: #FFFDF9;
+      --maple-red: #D94638;
+      --maple-deep: #A72B23;
+      --autumn-orange: #ED7D31;
+      --warm-amber: #F4A261;
+      --ginkgo-yellow: #F6C85F;
+      --ginkgo-light: #FEF6E4;
+      --matcha-green: #5B8C32;
+      --matcha-light: #EBF4E5;
+      --sky-blue: #4A90E2;
+      --text-main: #3F332A;
+      --text-muted: #7E7063;
+      --border-dashed: #DFCEBD;
+      --border-soft: #F0E3D3;
+      --shadow-kawaii: 0 6px 16px rgba(160, 110, 70, 0.12);
+      --radius-sm: 14px;
+      --radius-md: 22px;
+      --radius-lg: 32px;
+      --nav-height: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.65;
+      background-image: radial-gradient(var(--border-dashed) 1px, transparent 1px);
+      background-size: 22px 22px;
+      padding-bottom: 20px;
+    }
+
+    /* 頂部 Hero Banner (いらすとや手繪風) */
+    .hero {
+      background: linear-gradient(135deg, #FFE8D6 0%, #FFCBA4 40%, #F4A261 100%);
+      padding: 24px 16px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 4px solid #E89A5A;
+      box-shadow: 0 4px 18px rgba(232, 122, 62, 0.18);
+    }
+    .hero::before, .hero::after {
+      content: '🍂';
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.28;
+      pointer-events: none;
+    }
+    .hero::before { top: 4px; left: 2%; transform: rotate(-25deg); }
+    .hero::after { bottom: 4px; right: 2%; transform: rotate(30deg); }
+
+    .tape-badge {
+      display: inline-block;
+      background: #FFFFFF;
+      color: var(--maple-deep);
+      font-weight: 900;
+      font-size: 0.85rem;
+      padding: 4px 16px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      border: 1.5px solid #F5BCA0;
+    }
+
+    .hero h1 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #7A2818;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .hero p {
+      font-size: 0.92rem;
+      color: #6E3F23;
+      font-weight: 700;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .meta-tag {
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text-main);
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid #EDCBB5;
+    }
+
+    /* 主要容器 */
+    .container {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 14px 12px 70px;
+    }
+
+    /* 置頂橫向站點動線導航 (Top Route Map Bar) */
+    .top-route-container {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      border: 2px solid #EAD8C7;
+      box-shadow: var(--shadow-kawaii);
+      margin-bottom: 18px;
+      position: sticky;
+      top: 8px;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.98);
+    }
+
+    .top-route-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px dashed #E5D2C0;
+    }
+
+    .top-route-title {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--maple-deep);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gmap-all-day-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: linear-gradient(135deg, #1A73E8 0%, #34A853 100%);
+      color: #FFFFFF !important;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(26, 115, 232, 0.25);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .route-tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .route-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      background: #F8EFE4;
+      border: 1.5px solid transparent;
+      color: #554433;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .tab-btn:hover {
+      background: #FFE8D6;
+      border-color: var(--autumn-orange);
+    }
+    .tab-btn.active {
+      background: var(--maple-red);
+      color: #FFF;
+      box-shadow: 0 3px 8px rgba(217, 70, 56, 0.35);
+    }
+
+    /* 橫向站點串聯動線卡片 */
+    .top-steps-track {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 8px 2px 2px;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+      min-height: 52px;
+    }
+
+    .step-station-card {
+      flex-shrink: 0;
+      background: #FFFDF9;
+      border: 1.8px solid #EADBCC;
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 155px;
+    }
+    .step-station-card:hover, .step-station-card:active {
+      background: #FFF4EC;
+      border-color: var(--autumn-orange);
+    }
+    .step-station-card.active-pin {
+      border-color: var(--maple-red);
+      background: #FFF0E8;
+    }
+
+    .step-badge {
+      background: var(--ginkgo-yellow);
+      color: #614605;
+      font-weight: 900;
+      font-size: 0.74rem;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .step-name {
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .step-stay {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .transit-arrow {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--autumn-orange);
+      background: #FFF1E6;
+      padding: 3px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      border: 1px dashed #E59A65;
+    }
+
+    /* 左右版面配置 */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* 左側手冊欄 */
+    .manual-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* 卡片共通手帳感 */
+    .cute-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 18px 18px;
+      border: 2px solid var(--border-dashed);
+      box-shadow: var(--shadow-kawaii);
+      position: relative;
+    }
+
+    .cute-card::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      width: 70px;
+      height: 16px;
+      background: rgba(246, 200, 95, 0.65);
+      border-left: 2px dashed rgba(255,255,255,0.8);
+      border-right: 2px dashed rgba(255,255,255,0.8);
+      transform: rotate(-1.5deg);
+      pointer-events: none;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--maple-deep);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      border-bottom: 2px dashed #EAD8C7;
+      padding-bottom: 8px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .sub-box {
+      background: var(--paper-cream);
+      border-radius: var(--radius-sm);
+      padding: 13px;
+      border: 1.5px solid #EFE2D3;
+    }
+    .sub-box h4 {
+      font-size: 0.92rem;
+      color: var(--autumn-orange);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .sub-box ul {
+      list-style: none;
+      font-size: 0.84rem;
+    }
+    .sub-box ul li {
+      margin-bottom: 5px;
+    }
+
+    .hotel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hotel-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      background: var(--paper-cream);
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #EFE2D3;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .hotel-item:hover, .hotel-item:active {
+      background: #FFF4EC;
+      border-color: var(--autumn-orange);
+    }
+    .hotel-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .hotel-name {
+      font-weight: 900;
+      color: var(--maple-deep);
+      font-size: 0.9rem;
+    }
+    .hotel-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .day-card {
+      border-left: 5px solid var(--autumn-orange);
+      scroll-margin-top: 130px;
+    }
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .day-badge {
+      background: var(--autumn-orange);
+      color: #FFF;
+      font-weight: 900;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+    }
+    .day-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--text-main);
+    }
+    .day-route {
+      display: inline-block;
+      background: var(--ginkgo-light);
+      color: #7A5B0B;
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      margin-bottom: 12px;
+      border: 1px dashed #E5C370;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      bottom: 6px;
+      width: 2.5px;
+      background: #E8D9C9;
+      border-radius: 2px;
+    }
+    .timeline-node {
+      position: relative;
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+      background: #FFFCF7;
+      border: 1px solid #F0E4D5;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .timeline-node:hover {
+      background: #FFF7F0;
+      border-color: #F8CBB2;
+    }
+    .timeline-node::before {
+      content: '';
+      position: absolute;
+      left: -18px;
+      top: 17px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--autumn-orange);
+      border: 2px solid #FFF;
+      box-shadow: 0 0 0 2px var(--autumn-orange);
+    }
+    .timeline-time {
+      font-size: 0.8rem;
+      font-weight: 900;
+      color: var(--maple-red);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .spot-action-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .spot-nav-btn {
+      background: #1A73E8;
+      color: #FFFFFF !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 5px rgba(26,115,232,0.2);
+      transition: all 0.2s;
+    }
+    .spot-nav-btn:hover {
+      background: #1557b0;
+      transform: translateY(-1px);
+    }
+    .spot-preview-btn {
+      background: #FFF2E8;
+      color: var(--maple-deep);
+      border: 1px solid #F0C4A8;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .spot-preview-btn:hover {
+      background: #FFE5D4;
+    }
+
+    .spot-story-box {
+      margin-top: 8px;
+      background: #FFFDF4;
+      border: 1.2px dashed #E2CE84;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      color: #614D1A;
+      line-height: 1.45;
+    }
+    .spot-story-box strong {
+      color: #9C7811;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .baby-friendly-tip {
+      margin-top: 10px;
+      background: var(--matcha-light);
+      border: 1.2px dashed var(--matcha-green);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      font-size: 0.78rem;
+      color: #2D5413;
+      line-height: 1.45;
+    }
+
+    .trivia-card {
+      background: #FFFBEA;
+      border: 1.5px dashed #E2CE84;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      margin-top: 12px;
+    }
+    .trivia-title {
+      font-weight: 900;
+      color: #9C7811;
+      font-size: 0.84rem;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .trivia-text {
+      font-size: 0.8rem;
+      color: #635022;
+      line-height: 1.45;
+    }
+
+    /* 仙台 5 大牛舌評比專屬樣式修復 */
+    .gyutan-guide-box {
+      margin-top: 18px;
+      background: #FFF9F3;
+      border: 2px dashed #E5B28B;
+      border-radius: var(--radius-sm);
+      padding: 16px 14px;
+    }
+
+    .gyutan-guide-header {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--maple-deep);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1.5px dashed #F0CBAB;
+      padding-bottom: 6px;
+    }
+
+    .gyutan-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .gyutan-card {
+      background: #FFFFFF;
+      border: 1.5px solid #F3DFCE;
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      box-shadow: 0 2px 6px rgba(180, 110, 60, 0.05);
+      transition: all 0.2s ease;
+    }
+    .gyutan-card:hover {
+      border-color: var(--autumn-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(180, 110, 60, 0.12);
+    }
+
+    .gyutan-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .gyutan-name {
+      font-size: 0.88rem;
+      font-weight: 900;
+      color: var(--maple-deep);
+    }
+
+    .gyutan-tag {
+      background: #FFF0E6;
+      color: var(--autumn-orange);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #F8CBB0;
+      white-space: nowrap;
+    }
+
+    .gyutan-desc {
+      font-size: 0.82rem;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    .gyutan-action-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .gyutan-nav-btn {
+      background: #1A73E8;
+      color: #FFFFFF !important;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 5px rgba(26,115,232,0.2);
+      transition: all 0.2s;
+    }
+    .gyutan-nav-btn:hover {
+      background: #1557b0;
+    }
+
+    .gyutan-preview-btn {
+      background: #FFF2E8;
+      color: var(--maple-deep);
+      border: 1px solid #F0C4A8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .gyutan-preview-btn:hover {
+      background: #FFE5D4;
+    }
+
+    /* 新幹線時刻表專屬樣式 */
+    .shinkansen-timetable-box {
+      margin-top: 12px;
+      background: #F4FAF5;
+      border: 1.5px dashed #4BA368;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+    }
+    .timetable-title {
+      font-size: 0.88rem;
+      font-weight: 900;
+      color: #27683C;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .timetable-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .timetable-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #D8EBDD;
+      font-size: 0.82rem;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .tt-train {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 800;
+      color: #1F3D2A;
+    }
+    .tt-badge {
+      background: #2E8540;
+      color: #FFF;
+      font-size: 0.68rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .tt-time {
+      font-weight: 900;
+      color: #D94638;
+      font-size: 0.88rem;
+    }
+    .tt-duration {
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      background: #EDF5F0;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    /* 右側固定 Sticky 欄位 (Google Maps 視窗) */
+    .sticky-col {
+      position: sticky;
+      top: 85px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .gmap-box-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      border: 2px solid var(--border-dashed);
+      box-shadow: var(--shadow-kawaii);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gmap-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .current-spot-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #FFF0E8;
+      color: var(--maple-deep);
+      font-weight: 900;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #F5C6AA;
+      max-width: 210px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .open-gmap-external-link {
+      background: #1A73E8;
+      color: #FFFFFF !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 6px rgba(26,115,232,0.25);
+    }
+
+    .gmap-iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 440px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1.5px solid #EBDBCB;
+      background-color: #F8F5EE;
+    }
+    .gmap-iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .quick-spots-bar {
+      margin-top: 10px;
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      max-height: 110px;
+      overflow-y: auto;
+    }
+    .quick-pin-pill {
+      background: #FDF7F0;
+      border: 1px solid #E8D6C4;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #554433;
+      padding: 3px 9px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      transition: all 0.2s;
+    }
+    .quick-pin-pill.active {
+      background: var(--maple-red);
+      color: #FFFFFF;
+      border-color: var(--maple-deep);
+    }
+
+    /* 手機專屬：底部常駐切換列 (Mobile Bottom Navigation Bar) */
+    .mobile-bottom-bar {
+      display: none;
+    }
+
+    /* 行動裝置優化模式 (Mobile Layout Optimization) */
+    @media (max-width: 960px) {
+      body {
+        padding-bottom: 74px; /* 保留給底部導覽列空間 */
+      }
+      .container {
+        padding: 10px 10px 80px;
+      }
+      .layout-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* 手機視角切換器 (Tab View: 行程手冊 vs 互動地圖) */
+      .mobile-view-tabs {
+        display: flex;
+        background: #FFFFFF;
+        border: 2px solid #E5D3C1;
+        border-radius: 999px;
+        padding: 4px;
+        margin-bottom: 14px;
+        box-shadow: 0 4px 12px rgba(160, 110, 70, 0.08);
+      }
+      .m-view-btn {
+        flex: 1;
+        border: none;
+        background: transparent;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 900;
+        color: var(--text-muted);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+      }
+      .m-view-btn.active {
+        background: var(--autumn-orange);
+        color: #FFFFFF;
+        box-shadow: 0 2px 8px rgba(232, 122, 62, 0.3);
+      }
+
+      /* 當在行動裝置處於不同分頁時控制顯示隱藏 */
+      body.mode-manual .sticky-col {
+        display: none !important;
+      }
+      body.mode-manual .manual-col {
+        display: flex !important;
+      }
+
+      body.mode-map .manual-col {
+        display: none !important;
+      }
+      body.mode-map .sticky-col {
+        display: flex !important;
+        position: relative;
+        top: 0;
+      }
+      body.mode-map .gmap-iframe-wrapper {
+        height: 60vh; /* 地圖視角在手機占螢幕 60% 高度 */
+      }
+
+      /* 底部固定導航列 */
+      .mobile-bottom-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: var(--nav-height);
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 2px solid #ECDCCB;
+        box-shadow: 0 -4px 16px rgba(100, 70, 40, 0.08);
+        backdrop-filter: blur(10px);
+        z-index: 2000;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 10px;
+      }
+      .nav-action-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        font-size: 0.72rem;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 4px 12px;
+        border-radius: var(--radius-sm);
+        transition: all 0.2s ease;
+      }
+      .nav-action-item span.icon {
+        font-size: 1.25rem;
+        margin-bottom: 2px;
+      }
+      .nav-action-item.active {
+        color: var(--maple-red);
+      }
+      .nav-action-item.active span.icon {
+        transform: scale(1.15);
+      }
+
+      /* 行動版專屬浮動快搜按鈕 */
+      .mobile-direct-gmap-btn {
+        background: linear-gradient(135deg, #1A73E8, #34A853);
+        color: #FFFFFF !important;
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(26,115,232,0.3);
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 16px 40px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body class="mode-manual">
+
+  <!-- 頂部 Hero 橫幅 (いらすとや日系童趣風) -->
+  <header class="hero">
+    <div class="tape-badge">👶 倍果追楓小隊專屬手冊</div>
+    <h1><span>🍁</span> 2026 東北紅葉親子遊 <span>🍁</span></h1>
+    <p>8天7夜・手牽手漫步金黃色的浪漫秋天 🍂</p>
+    <div class="hero-meta">
+      <div class="meta-tag">📅 2026.10.17 - 10.24</div>
+      <div class="meta-tag">🚗 仙台 ➔ 八戶 ➔ 十和田 ➔ 青森 ➔ 仙台</div>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- 手機版專屬頂部視角切換器 (行程手冊 vs 地圖模式) -->
+    <div class="mobile-view-tabs">
+      <button class="m-view-btn active" id="btn-tab-manual" onclick="setMobileMode('manual')">
+        <span>📖 詳細行程手冊</span>
+      </button>
+      <button class="m-view-btn" id="btn-tab-map" onclick="setMobileMode('map')">
+        <span>🗺️ 即時地圖與導航</span>
+      </button>
+    </div>
+
+    <!-- 置頂：立體站點動線圖 (Route Map) & 每日快速切換列 -->
+    <div class="top-route-container">
+      <div class="top-route-header">
+        <div class="top-route-title">
+          <span>🚗 當日自駕動線 (Route Map)</span>
+        </div>
+        <!-- Google Maps 當日完整多點路線規劃按鈕 -->
+        <a id="gmap-day-route-btn" href="https://www.google.com/maps/dir/Sendai+Airport/Hotel+Keihan+Sendai/Gyutan+Do-ri" target="_blank" rel="noopener noreferrer" class="gmap-all-day-btn">
+          <span>🗺️ Google 導航今日全路線</span>
+        </a>
+      </div>
+
+      <!-- Day 分頁按鈕 -->
+      <div class="route-tabs" id="route-tabs-bar">
+        <button class="tab-btn active" onclick="switchDayRoute(1)">Day 1 仙台落地</button>
+        <button class="tab-btn" onclick="switchDayRoute(2)">Day 2 松島海岸</button>
+        <button class="tab-btn" onclick="switchDayRoute(3)">Day 3 仙台童趣</button>
+        <button class="tab-btn" onclick="switchDayRoute(4)">Day 4 八戶自駕</button>
+        <button class="tab-btn" onclick="switchDayRoute(5)">Day 5 奧入瀨秘境</button>
+        <button class="tab-btn" onclick="switchDayRoute(6)">Day 6 八甲田淺蟲</button>
+        <button class="tab-btn" onclick="switchDayRoute(7)">Day 7 青森歸途</button>
+        <button class="tab-btn" onclick="switchDayRoute(8)">Day 8 仙台返家</button>
+      </div>
+
+      <!-- 橫向站點串聯軌道 (Top Steps Track) -->
+      <div class="top-steps-track" id="route-steps-container"></div>
+    </div>
+
+    <div class="layout-grid">
+      
+      <!-- 左側手冊欄 (Manual Column) -->
+      <main class="manual-col">
+        
+        <!-- 航班與租車資訊 -->
+        <section class="cute-card">
+          <h2 class="card-title">✈️ 航班與租車資訊</h2>
+          <div class="info-grid">
+            <div class="sub-box">
+              <h4>🛫 星宇航空 (STARLUX)</h4>
+              <ul>
+                <li><strong>去程：</strong>10/17 (六) JX862<br>&nbsp;&nbsp;&nbsp;台北 11:35 ➔ 仙台 16:00</li>
+                <li><strong>回程：</strong>10/24 (六) JX863<br>&nbsp;&nbsp;&nbsp;仙台 17:25 ➔ 台北 20:35</li>
+              </ul>
+            </div>
+            <div class="sub-box">
+              <h4>🚗 租車自駕 & 新幹線</h4>
+              <ul>
+                <li><strong>🔑 取車：</strong>10/20 11:00 (八戶站西口)</li>
+                <li><strong>🏁 還車：</strong>10/23 13:45 (新青森站西口)</li>
+                <li><strong>🚄 新幹線：</strong>10/20 早 仙台 ➔ 八戶</li>
+                <li><strong>🚄 新幹線：</strong>10/23 下午 新青森 ➔ 仙台 (Hayabusa)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 住宿清單 -->
+        <section class="cute-card">
+          <h2 class="card-title">🏨 住宿總覽</h2>
+          <div class="hotel-list">
+            <div class="hotel-item" onclick="handleSpotClick('keihan')">
+              <div class="hotel-icon">🏨</div>
+              <div>
+                <div class="hotel-name">仙台京阪飯店 (Hotel Keihan Sendai)</div>
+                <div class="hotel-desc">10/17-10/20｜3 晚：市區近郊移動最佳基地，附豐富早餐。</div>
+              </div>
+            </div>
+            <div class="hotel-item" onclick="handleSpotClick('oiraseya')">
+              <div class="hotel-icon">🏡</div>
+              <div>
+                <div class="hotel-name">奧入瀨溪流 Retreat Oiraseya</div>
+                <div class="hotel-desc">10/20-10/22｜2 晚：包棟 Airbnb，附廚房可煮和牛火鍋。</div>
+              </div>
+            </div>
+            <div class="hotel-item" onclick="handleSpotClick('kaisenkaku')">
+              <div class="hotel-icon">♨️</div>
+              <div>
+                <div class="hotel-name">南部屋・海扇閣 (淺蟲溫泉)</div>
+                <div class="hotel-desc">10/22-10/23｜1 晚：享無敵海景浴場與津輕三味線 live 演出。</div>
+              </div>
+            </div>
+            <div class="hotel-item" onclick="handleSpotClick('superhotel')">
+              <div class="hotel-icon">♨️</div>
+              <div>
+                <div class="hotel-name">Super Hotel 仙台站東口</div>
+                <div class="hotel-desc">10/23-10/24｜1 晚：天然溫泉放鬆，市區最後採買補貨據點。</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DAY 1 -->
+        <section class="cute-card day-card" id="day-card-1">
+          <div class="day-header">
+            <span class="day-badge">DAY 1 ・ 10/17 (六)</span>
+            <h3 class="day-title">優雅落地與牛舌大餐</h3>
+          </div>
+          <div class="day-route">📍 路線：仙台機場 ➔ 仙台京阪飯店 ➔ 仙台車站牛舌通</div>
+          <div class="timeline">
+            <!-- 仙台機場 -->
+            <div class="timeline-node">
+              <div class="timeline-time">✈️ 16:00 抵達</div>
+              <div class="timeline-desc">降落仙台機場，搭乘機場快速電車（Access 線約 25 分）直達仙台市區。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=仙台空港" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('sendai_airport')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 景點小知識：</strong>仙台機場是全東北第一座擁有地下化直達鐵道的機場，機場 2F 國內線大廳有尊「達摩不倒翁」像，是許多旅人落地摸一下祈求平安的吉祥物！
+              </div>
+            </div>
+
+            <!-- 仙台京阪飯店 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🏨 17:30 入住</div>
+              <div class="timeline-desc">仙台京阪飯店 Check-in，放下推車與大件行李，輕鬆換輕裝出門。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=ホテル京阪+仙台" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('keihan')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 飯店小故事：</strong>鄰近青葉通，大廳設有房客專用「備品吧檯」，可自由挑選寶寶友善棉花棒、日系草本入浴劑，洗去飛行疲憊超貼心。
+              </div>
+            </div>
+
+            <!-- 仙台車站牛舌通 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🥩 18:30 晚餐</div>
+              <div class="timeline-desc">仙台車站 3F「牛舌通」大啖厚切炭烤牛舌定食。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=仙台駅+牛たん通り" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('gyutan_street')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 美食小知識：</strong>二戰後烤雞串店老闆「佐野又四郎」因不捨美軍丟棄的牛舌部位，以厚切撒鹽醃製加上備長炭火慢烤，誕生了舉世聞名的仙台牛舌定食！
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 1：仙台 5 大推薦牛舌名店指南 -->
+          <div class="gyutan-guide-box">
+            <div class="gyutan-guide-header">
+              <span>🥩 仙台 5 大推薦牛舌名店評比指南</span>
+            </div>
+            <div class="gyutan-cards-grid">
+              
+              <!-- 1. 善治郎 -->
+              <div class="gyutan-card">
+                <div class="gyutan-card-top">
+                  <span class="gyutan-name">1. 善治郎 (牛たん通り店)</span>
+                  <span class="gyutan-tag">極厚炭火烤切</span>
+                </div>
+                <div class="gyutan-desc">在地人首推！職人手切極厚牛舌，外脆內爆汁，牛尾湯肉質鮮甜。</div>
+                <div class="gyutan-action-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&destination=たんや善治郎+仙台駅牛たん通り店" target="_blank" rel="noopener noreferrer" class="gyutan-nav-btn">
+                    🧭 Google 導航
+                  </a>
+                  <button class="gyutan-preview-btn" onclick="handleCustomSpot('善治郎 仙台駅牛たん通り店', 'たんや善治郎 仙台駅牛たん通り店')">
+                    🗺️ 地圖預覽
+                  </button>
+                </div>
+              </div>
+
+              <!-- 2. 閣 -->
+              <div class="gyutan-card">
+                <div class="gyutan-card-top">
+                  <span class="gyutan-name">2. 牛たん料理 閣 (本店)</span>
+                  <span class="gyutan-tag">米其林推薦</span>
+                </div>
+                <div class="gyutan-desc">米其林推薦！招牌獨創「牛舌生魚片」與特製「柚子醋角煮牛舌」，軟嫩無比。</div>
+                <div class="gyutan-action-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&destination=牛たん料理+閣+ブランドーム本店" target="_blank" rel="noopener noreferrer" class="gyutan-nav-btn">
+                    🧭 Google 導航
+                  </a>
+                  <button class="gyutan-preview-btn" onclick="handleCustomSpot('牛たん料理 閣 本店', '牛たん料理 閣 ブランドーム本店')">
+                    🗺️️ 地圖預覽
+                  </button>
+                </div>
+              </div>
+
+              <!-- 3. 司 -->
+              <div class="gyutan-card">
+                <div class="gyutan-card-top">
+                  <span class="gyutan-name">3. 牛舌 司 (東口店)</span>
+                  <span class="gyutan-tag">熟成備長炭</span>
+                </div>
+                <div class="gyutan-desc">高品質熟成牛舌，以極佳備長炭烘烤，黑胡椒與微辛辣味層次極佳。</div>
+                <div class="gyutan-action-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&destination=牛タン焼+専門店+司+仙台駅東口店" target="_blank" rel="noopener noreferrer" class="gyutan-nav-btn">
+                    🧭 Google 導航
+                  </a>
+                  <button class="gyutan-preview-btn" onclick="handleCustomSpot('牛タン焼 専門店 司 東口店', '牛タン焼 専門店 司 仙台駅東口店')">
+                    🗺️ 地圖預覽
+                  </button>
+                </div>
+              </div>
+
+              <!-- 4. 利久 -->
+              <div class="gyutan-card">
+                <div class="gyutan-card-top">
+                  <span class="gyutan-name">4. 牛たん炭焼 利久 (JR店)</span>
+                  <span class="gyutan-tag">經典穩定</span>
+                </div>
+                <div class="gyutan-desc">分店最多且品質穩定，特切厚燒定食多汁彈牙，亦有牛舌咖哩與燉菜。</div>
+                <div class="gyutan-action-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&destination=牛たん炭焼+利久+JR仙台駅店" target="_blank" rel="noopener noreferrer" class="gyutan-nav-btn">
+                    🧭 Google 導航
+                  </a>
+                  <button class="gyutan-preview-btn" onclick="handleCustomSpot('牛たん炭焼 利久 JR仙台駅店', '牛たん炭焼 利久 JR仙台駅店')">
+                    🗺️ 地圖預覽
+                  </button>
+                </div>
+              </div>
+
+              <!-- 5. 喜助 -->
+              <div class="gyutan-card">
+                <div class="gyutan-card-top">
+                  <span class="gyutan-name">5. 味の牛たん 喜助 (JR店)</span>
+                  <span class="gyutan-tag">秘傳味噌烤</span>
+                </div>
+                <div class="gyutan-desc">開業半世紀老字號，「秘傳味噌烤牛舌」醬香入味超下飯。</div>
+                <div class="gyutan-action-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&destination=味の牛たん+喜助+JR仙台駅店" target="_blank" rel="noopener noreferrer" class="gyutan-nav-btn">
+                    🧭 Google 導航
+                  </a>
+                  <button class="gyutan-preview-btn" onclick="handleCustomSpot('味の牛たん 喜助 JR仙台駅店', '味の牛たん 喜助 JR仙台駅店')">
+                    🗺️ 地圖預覽
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 親子友善小提示 -->
+            <div class="baby-friendly-tip">
+              🍼 <strong>倍果小隊貼心建議：</strong> 仙台車站 3F「牛舌通」常需排隊 30-40 分鐘。若推車不便或寶貝較累，善治郎、利久與司皆提供<strong>現烤外帶便當</strong>，外帶回「仙台京阪飯店」房間享用既舒適又安心！
+            </div>
+          </div>
+        </section>
+
+        <!-- DAY 2 -->
+        <section class="cute-card day-card" id="day-card-2">
+          <div class="day-header">
+            <span class="day-badge">DAY 2 ・ 10/18 (日)</span>
+            <h3 class="day-title">松島海岸深度一日遊</h3>
+          </div>
+          <div class="day-route">📍 路線：仙台 ➔ 松島海岸 ➔ 仙台 S-PAL</div>
+          <div class="timeline">
+            <!-- 松島海岸木棧道 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🌊 上午 09:30</div>
+              <div class="timeline-desc">搭乘 JR 仙石線悠閒前往松島海岸，漫步福浦橋與海灣木棧道。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=松島海岸駅" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('matsushima')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 景點小故事：</strong>通往福浦島的 252 公尺朱紅色長橋，被封為「日本與台灣的友好之橋」！311 震災受損後獲台灣日月潭觀光業者集資援助修復，是一座充滿台日情誼的良緣之橋。
+              </div>
+            </div>
+
+            <!-- 手烤魚板與牡蠣美食街 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🍢 中午 12:00</div>
+              <div class="timeline-desc">體驗手烤笹蒲鉾 (竹葉魚板)、品嚐現開飽滿多汁大牡蠣。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=阿部蒲鉾店+松島寺町店" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('matsushima')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 美食小知識：</strong>仙台名產「竹葉魚板」形狀像竹葉，源自伊達政宗的家族家紋「竹に雀」！自己親手在炭火台上翻面烤到金黃澎起，香氣撲鼻是松島最受歡迎的親子體驗。
+              </div>
+            </div>
+
+            <!-- 松島紅葉觀光船 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🛳 下午 14:00</div>
+              <div class="timeline-desc">搭乘松島灣遊覽船，吹徐徐海風穿梭於仁王島、鐘島等奇岩秋景。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=松島島巡り観光船" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('matsushima_cruise')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 奇景小故事：</strong>松島灣散布著 260 多座松樹蔥鬱的小島，正是這些島嶼形成了天然消波塊屏障，在歷史多次海嘯中守護了松島市街免遭滅頂。
+              </div>
+            </div>
+
+            <!-- S-PAL 仙台百貨 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🛍 傍晚 17:30</div>
+              <div class="timeline-desc">搭仙石線回仙台車站，悠閒逛 S-PAL 東館、採買毛豆麻糬或嬰童用品。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=エスパル仙台" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('spal')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 採買小撇步：</strong>S-PAL 本館地下 1F「毛豆小徑 (ずんだ小径)」匯集了「喜久水庵」與「毛豆茶寮」，一定要喝一杯現打香濃的毛豆奶昔（ずんだシェイク）！
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DAY 3 -->
+        <section class="cute-card day-card" id="day-card-3">
+          <div class="day-header">
+            <span class="day-badge">DAY 3 ・ 10/19 (一)</span>
+            <h3 class="day-title">童趣與楓紅市區漫步</h3>
+          </div>
+          <div class="day-route">📍 路線：仙台朝市 ➔ 麵包超人博物館 ➔ 定禪寺通</div>
+          <div class="timeline">
+            <!-- 仙台朝市 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🍇 08:30</div>
+              <div class="timeline-desc">仙台朝市推車散步，產地直購麝香葡萄、青森早生蘋果與手作炸可樂餅。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=仙台朝市" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('asaichi')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 景點小故事：</strong>雖名為「朝市」，但它其實從早上一路熱鬧到傍晚！二戰後從露天黑市蛻變為「仙台廚房」，長僅 100 公尺卻擠滿 70 多間老舖，水果價格比超市親民許多。
+              </div>
+            </div>
+
+            <!-- 麵包超人博物館 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🥐 10:00</div>
+              <div class="timeline-desc">麵包超人兒童博物館（避開週末人潮，寶貝盡情放電玩耍）！</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=仙台アンパンマンこどもミュージアム＆モール" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('anpanman')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 趣味小知識：</strong>麵包超人名列金氏世界紀錄登場角色最多的動畫（超過 1,768 位）！1F 免費購物區的「果醬叔叔麵包工坊」每天現烤真實麵包超人臉龐，紅豆內餡香甜又可愛。
+              </div>
+            </div>
+
+            <!-- 定禪寺通 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🍂 15:00</div>
+              <div class="timeline-desc">推車漫步「定禪寺通」，仰望四排櫸樹交織的金黃樹海長廊。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=定禅寺通+仙台" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('jozenji')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 城市美學小知識：</strong>中央綠道立著義大利雕塑家曼祖的經典作品《夏之回憶》。秋天 160 株櫸樹轉為璀璨黃褐色，是仙台「杜之都（森林之都）」最浪漫的象徵林蔭大道。
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DAY 4 -->
+        <section class="cute-card day-card" id="day-card-4">
+          <div class="day-header">
+            <span class="day-badge">DAY 4 ・ 10/20 (二)</span>
+            <h3 class="day-title">新幹線直奔十和田藝術</h3>
+          </div>
+          <div class="day-route">📍 路線：仙台 ➔ 八戶(取車) ➔ 八食中心 ➔ 現代美術館 ➔ 民宿</div>
+          <div class="timeline">
+            <!-- 八戶站西口 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🚄 11:00</div>
+              <div class="timeline-desc">全員攜帶大件行李搭新幹線直奔八戶，於八戶站西口順暢取車，行李與推車直接上後車廂，開啟自駕！</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=八戸駅+西口" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('hachinohe_station')">🗺️️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 取車自駕撇步：</strong>八戶站西口租車店腹地寬闊，推車與全家大行李直接放入後車廂超輕鬆，比市中心更適合安裝嬰兒安全座椅與熟悉右駕操作，開上國道 45 號線視野遼闊好開！
+              </div>
+            </div>
+
+            <!-- 八食中心七厘村 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🦐 12:00</div>
+              <div class="timeline-desc">八食中心「七厘村」：自由挑選現捕黑鮪魚、巨型帆立貝與魷魚，炭火現烤。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=八食センター+七厘村" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('hasshoku')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 在地小故事：</strong>八食中心室內全長 170 公尺！在水產攤位選完海鮮後，只要每人付幾百日幣就能租借炭爐烤網現烤現吃，連八戶在地的「銀鯖魚」也是油脂豐富必吃極品。
+              </div>
+            </div>
+
+            <!-- 十和田市現代美術館 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🎨 14:30</div>
+              <div class="timeline-desc">參觀十和田市現代美術館，與草間彌生點點大南瓜、彩色花馬合照。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=十和田市現代美術館" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('towada_art')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 建築小知識：</strong>這裡不是傳統展覽館，而是「先有世界級藝術品，才替每件作品量身訂做玻璃展示屋」！戶外草皮區完全免費開放，巨大幽靈雕塑更是寶寶會好奇目不轉睛的萌物。
+              </div>
+            </div>
+
+            <!-- Retreat Oiraseya 民宿 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🏡 17:30</div>
+              <div class="timeline-desc">AEON 永旺十和田店採買和牛火鍋食材，抵達包棟森林木屋 Retreat Oiraseya。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=奥入瀬渓流+Retreat+Oiraseya" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('oiraseya')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 住宿暖心故事：</strong>隱身於十和田森林旁的私人包棟木屋，擁有全套日本廚具與木質大餐桌。在滿山紅葉環抱下煮一鍋青森蘋果甘酒高湯和牛火鍋，是親子遊最奢華的溫馨時刻！
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DAY 5 -->
+        <section class="cute-card day-card" id="day-card-5">
+          <div class="day-header">
+            <span class="day-badge">DAY 5 ・ 10/21 (三)</span>
+            <h3 class="day-title">金黃森林與和牛火鍋</h3>
+          </div>
+          <div class="day-route">📍 路線：蔦七沼 ➔ 奧入瀨溪流 ➔ 十和田湖 ➔ 民宿</div>
+          <div class="timeline">
+            <!-- 蔦沼 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🍁 09:00</div>
+              <div class="timeline-desc">背巾出動！漫步蔦沼平坦木棧步道，仰望金黃山毛櫸倒映在水面的絕景。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=蔦沼" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('tsutanuma')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 秘境小秘密：</strong>蔦沼以清晨「朝燒（宛如燃燒般的赤紅倒影）」聞名世界，早上 9:00 過後人潮漸散、陽光穿透原始山毛櫸樹梢，水面如明鏡般倒映金黃秋意，更加靜謐怡人。
+              </div>
+            </div>
+
+            <!-- 奧入瀨溪流精華段 -->
+            <div class="timeline-node">
+              <div class="timeline-time">💧 11:30</div>
+              <div class="timeline-desc">奧入瀨溪流精華段散步（石戶至阿修羅之流，順路開車停靠銚子大瀑布）。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=石ヶ戸休憩所" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('oirase_stream')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 生態小知識：</strong>奧入瀨溪流是十和田湖「唯一的出口河川」！為維持大自然原貌，國家公園法規定倒下的朽木、附生的 300 多種青苔都不得人為移除，堪稱天然苔蘚活博物館。
+              </div>
+            </div>
+
+            <!-- 十和田湖遊覽船 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🚤 14:30</div>
+              <div class="timeline-desc">休屋碼頭搭乘十和田湖觀光船，從湖心視角欣賞外輪山層疊的金紅楓海。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=十和田湖遊覧船+休屋のりば" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('towada_lake')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 地理小傳奇：</strong>十和田湖是 20 萬年前火山陷落形成的破火山口湖，最深處達 327 公尺（全日本第 3）。湖畔還聳立著雕刻家高村光太郎生前最後傑作《少女之像》。
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DAY 6 -->
+        <section class="cute-card day-card" id="day-card-6">
+          <div class="day-header">
+            <span class="day-badge">DAY 6 ・ 10/22 (四)</span>
+            <h3 class="day-title">壯闊樹海與海景溫泉</h3>
+          </div>
+          <div class="day-route">📍 路線：八甲田山 ➔ 城倉大橋 ➔ 淺蟲溫泉</div>
+          <div class="timeline">
+            <!-- 八甲田山空中纜車 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🚠 09:30</div>
+              <div class="timeline-desc">八甲田山纜車直攻山頂看樹海，自空中俯瞰紅、黃、綠三段染奇景。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=八甲田ロープウェー" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('hakkoda')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 氣候奇景小知識：</strong>八甲田山不是單一座山，而是十幾座連峰統稱！秋天因海拔落差，山頂率先入冬結白霜、山腰正逢紅葉盛放、山腳依舊翠綠，這就是著名「三段染」的由來。
+              </div>
+            </div>
+
+            <!-- 城倉大橋 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🌉 12:00</div>
+              <div class="timeline-desc">漫步城倉大橋兩側行人步道，零死角俯瞰城倉溪谷 360 度深谷楓景。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=城ヶ倉大橋" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('jogakura')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 工藝小知識：</strong>這座鋼橋全長 360 公尺，是全日本跨距最長的上路式拱橋！橋面距離谷底有 122 公尺（約 40 層樓高），秋天站在橋中央彷彿整個人飄浮在繽紛彩林之上。
+              </div>
+            </div>
+
+            <!-- 南部屋・海扇閣 -->
+            <div class="timeline-node">
+              <div class="timeline-time">♨️ 16:00</div>
+              <div class="timeline-desc">入住南部屋・海扇閣海景溫泉飯店，泡湯遠眺陸奧灣，晚餐後欣賞 20:30 三味線 live。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=南部屋・海扇閣" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('kaisenkaku')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 文化小故事：</strong>淺蟲溫泉開湯超過 800 年，相傳是平安時代高僧圓光大師發現鹿在泡湯療傷而得名！海扇閣每晚在大廳舉行的津輕三味線撥弦震撼回音，是青森獨有的靈魂之音。
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DAY 7 -->
+        <section class="cute-card day-card" id="day-card-7">
+          <div class="day-header">
+            <span class="day-badge">DAY 7 ・ 10/23 (五)</span>
+            <h3 class="day-title">青森文化與新幹線歸途</h3>
+          </div>
+          <div class="day-route">📍 路線：睡魔之家 ➔ A-FACTORY ➔ 古川市場 ➔ 仙台</div>
+          <div class="timeline">
+            <!-- 睡魔之家 WA・RASSE -->
+            <div class="timeline-node">
+              <div class="timeline-time">🏮 09:30</div>
+              <div class="timeline-desc">參觀睡魔之家 WA・RASSE，近距離欣賞祭典得獎的巨型和紙睡魔燈籠。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=ねぶたの家+ワ・ラッセ" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('warasse')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 職人手作小故事：</strong>睡魔大燈籠全靠職人純手工以鐵絲骨架搭造、手工和紙一片片糊貼上色，重達數噸！每年祭典僅有少數得獎傑作能長久保存在館內免於拆毀。
+              </div>
+            </div>
+
+            <!-- A-FACTORY -->
+            <div class="timeline-node">
+              <div class="timeline-time">🍎 11:00</div>
+              <div class="timeline-desc">步行至旁邊 A-FACTORY 採買青森純蘋果汁、品嚐在地蘋果派與蘋果酒。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=A-FACTORY" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('warasse')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 設計小巧思：</strong>挑高玻璃帷幕工坊建築直接連通青森港灣！館內設置有透明釀造房，現場就能聞到陣陣蘋果香，也是買給寶寶純天然無添加蘋果脆片的最佳據點。
+              </div>
+            </div>
+
+            <!-- 古川市場 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🍚 12:00</div>
+              <div class="timeline-desc">古川市場體驗「のっけ丼」，拿藍色餐券隨選黑鮪魚、大生蠔與干貝鋪成自選海鮮丼。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=青森魚菜センター+のっけ丼" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('furukawa')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 誕生小趣味：</strong>「のっけ (Nokke)」在日文裡就是「鋪上去/堆上去」之意！起初是市場攤販為了讓觀光客少量多樣嚐遍陸奧灣海鮮而發想出的互動點餐法，如今風靡全日本。
+              </div>
+            </div>
+
+            <!-- 新青森站西口還車 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🚄 13:45 還車 / 下午搭車</div>
+              <div class="timeline-desc">新青森站西口店順暢歸還租車，搭新幹線隼號 (Hayabusa) 疾駛回到仙台。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=新青森駅+西口" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('shin_aomori')">🗺️ 地圖定位</button>
+              </div>
+
+              <!-- 10/23 (五) 新青森 ➔ 仙台 東北新幹線時刻表 -->
+              <div class="shinkansen-timetable-box">
+                <div class="timetable-title">
+                  <span>🚄 10/23 (五) 新青森 ➔ 仙台 新幹線建議班次表</span>
+                </div>
+                <div class="timetable-list">
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge">東北新幹線</span> 下午 2:38 ➔ 下午 4:29</span>
+                    <span class="tt-duration">⏱ 1 小時 51 分</span>
+                  </div>
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge">東北新幹線</span> 下午 3:17 ➔ 下午 4:56</span>
+                    <span class="tt-duration">⏱ 1 小時 39 分</span>
+                  </div>
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge">東北新幹線</span> 下午 3:36 ➔ 下午 5:08</span>
+                    <span class="tt-duration">⏱ 1 小時 32 分 (推薦首選)</span>
+                  </div>
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge">東北新幹線</span> 下午 3:52 ➔ 下午 5:29</span>
+                    <span class="tt-duration">⏱ 1 小時 37 分 (備用班次)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spot-story-box">
+                <strong>💡 鐵道小秘密：</strong>東北新幹線 E5 系列隼號列車最高時速可達 320 公里！從青森跨越秋田、岩手回到宮城仙台僅需約 90 分鐘，綠色流線車頭是許多大小朋友最愛的火車英雄。
+              </div>
+            </div>
+
+            <!-- Super Hotel 仙台站東口 -->
+            <div class="timeline-node">
+              <div class="timeline-time">♨️ 18:00</div>
+              <div class="timeline-desc">入住 Super Hotel 仙台站東口，泡天然溫泉舒緩身心，車站周邊享受最後一晚。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=スーパーホテル仙台・駅東口+天然温泉" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('superhotel')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 貼心小秘密：</strong>這間 Super Hotel 引進了天然溫泉「玄要之湯」，更提供 8 種不同軟硬度與高度的枕頭供旅客自選，讓自駕多日的爸爸媽媽能深層好眠！
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DAY 8 -->
+        <section class="cute-card day-card" id="day-card-8">
+          <div class="day-header">
+            <span class="day-badge">DAY 8 ・ 10/24 (六)</span>
+            <h3 class="day-title">滿載而歸</h3>
+          </div>
+          <div class="day-route">📍 路線：仙台車站周邊/Outlet ➔ 仙台機場 ➔ 台北</div>
+          <div class="timeline">
+            <!-- 仙台車站周邊/三井Outlet -->
+            <div class="timeline-node">
+              <div class="timeline-time">🛍 10:00</div>
+              <div class="timeline-desc">飯店早餐後退房寄放行李，車站周邊 S-PAL 或前往三井 Outlet 仙台港最後採買。</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=三井アウトレットパーク+仙台港" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('spal')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 購物小攻略：</strong>三井 Outlet 仙台港擁有東北最大的 50 米巨型摩天輪！若推車採買，地下鐵東西線直通的「仙台 PARCO2」也很適合雨備快速採購。
+              </div>
+            </div>
+
+            <!-- 仙台機場起飛返台 -->
+            <div class="timeline-node">
+              <div class="timeline-time">🛫 15:25 機場報到 / 17:25 起飛</div>
+              <div class="timeline-desc">搭乘仙台機場 Access 線（東北本線直通）前往仙台機場，完成退稅與行李託運，17:25 搭乘星宇航空 JX863 平安回台！</div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=仙台空港+国際線ターミナル" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('sendai_airport')">🗺️ 地圖定位</button>
+              </div>
+
+              <!-- 10/24 (六) 仙台車站 ➔ 仙台機場 Access線時刻表 -->
+              <div class="shinkansen-timetable-box" style="border-color: #2A72B5; background: #F2F7FC;">
+                <div class="timetable-title" style="color: #174E80;">
+                  <span>🚆 10/24 (六) 仙台車站 ➔ 仙台機場 電車建議班次表 (單程 ¥680)</span>
+                </div>
+                <div class="timetable-list">
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge" style="background:#228838;">JR 東北本線</span> 下午 1:50 ➔ 下午 2:17</span>
+                    <span class="tt-duration">⏱ 27 分 (超早到最悠閒)</span>
+                  </div>
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge" style="background:#228838;">JR 東北本線</span> 下午 2:10 ➔ 下午 2:37</span>
+                    <span class="tt-duration">⏱ 27 分 (從容報到首選 ⭐)</span>
+                  </div>
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge" style="background:#228838;">JR 東北本線</span> 下午 2:30 ➔ 下午 2:57</span>
+                    <span class="tt-duration">⏱ 27 分 (極佳推薦 ⭐)</span>
+                  </div>
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge" style="background:#228838;">JR 東北本線</span> 下午 2:50 ➔ 下午 3:17</span>
+                    <span class="tt-duration">⏱ 27 分 (準時銜接 15:25 報到)</span>
+                  </div>
+                  <div class="timetable-row">
+                    <span class="tt-train"><span class="tt-badge" style="background:#228838;">JR 東北本線</span> 下午 3:10 ➔ 下午 3:37</span>
+                    <span class="tt-duration">⏱ 27 分 (最後備用班次)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spot-story-box">
+                <strong>💡 伴手禮壓軸：</strong>出境前可別錯過「萩の月」卡士達蛋糕，冰過之後口感宛如冰淇淋布丁；把滿滿的東北楓紅與寶寶笑顏裝進行李箱，期待下一趟冒險！
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右側固定 Sticky 欄位：Google Maps 視窗 -->
+      <aside class="sticky-col">
+        <div class="gmap-box-card">
+          <div class="gmap-header-bar">
+            <div>
+              <span id="current-spot-badge" class="current-spot-badge">
+                📍 仙台車站 牛舌通
+              </span>
+            </div>
+            <a id="current-gmap-external-link" href="https://maps.google.com/?cid=11228884496569803512" target="_blank" rel="noopener noreferrer" class="open-gmap-external-link">
+              <span>🧭 Google 導航</span>
+            </a>
+          </div>
+          
+          <!-- Google Maps 嵌入式 iframe -->
+          <div class="gmap-iframe-wrapper">
+            <iframe
+              id="google-maps-iframe"
+              src="https://maps.google.com/maps?q=Sendai+Station+Gyutan+Dori&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- 快捷景點 Pills 條 -->
+          <div class="quick-spots-bar" id="quick-spots-container">
+            <!-- 動態填入當日站點快捷鍵 -->
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 手機專屬：底部常駐切換導航列 -->
+  <nav class="mobile-bottom-bar">
+    <button class="nav-action-item active" id="nav-btn-manual" onclick="setMobileMode('manual')">
+      <span class="icon">📖</span>
+      <span>行程手冊</span>
+    </button>
+    <button class="nav-action-item" id="nav-btn-map" onclick="setMobileMode('map')">
+      <span class="icon">🗺️</span>
+      <span>地圖導航</span>
+    </button>
+    <a id="mobile-current-ext-nav" href="https://maps.google.com/?cid=11228884496569803512" target="_blank" rel="noopener noreferrer" class="mobile-direct-gmap-btn">
+      <span>🧭</span>
+      <span>開啟 Google Maps</span>
+    </a>
+  </nav>
+
+  <footer>
+    🍁 2026 秋・倍果追楓小隊專屬旅程網頁 | 祝旅途平安滿載幸福回憶！
+  </footer>
+
+  <script>
+    // 景點資料庫與 Google Maps 專用檢索 query 及外部直連 URL
+    const SPOTS = {
+      sendai_airport: { 
+        name: "仙台機場 (SDJ)", 
+        icon: "✈️", 
+        gQuery: "Sendai Airport", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Sendai+Airport" 
+      },
+      keihan: { 
+        name: "仙台京阪飯店", 
+        icon: "🏨", 
+        gQuery: "Hotel Keihan Sendai", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Sendai" 
+      },
+      gyutan_street: { 
+        name: "仙台車站 牛舌通", 
+        icon: "🥩", 
+        gQuery: "Sendai Station Gyutan Dori", 
+        dirUrl: "https://maps.google.com/?cid=11228884496569803512" 
+      },
+      matsushima: { 
+        name: "松島海岸", 
+        icon: "🌊", 
+        gQuery: "Matsushima Kaigan Station", 
+        dirUrl: "https://maps.google.com/?cid=15104521455054131142" 
+      },
+      matsushima_cruise: { 
+        name: "松島灣觀光船", 
+        icon: "🛳", 
+        gQuery: "Matsushima Cruise Pier", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Matsushima+Cruises" 
+      },
+      spal: { 
+        name: "S-PAL 仙台百貨", 
+        icon: "🛍️", 
+        gQuery: "S-PAL Sendai", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=S-PAL+Sendai" 
+      },
+      asaichi: { 
+        name: "仙台朝市", 
+        icon: "🍇", 
+        gQuery: "Sendai Asaichi Market", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Sendai+Asaichi+Market" 
+      },
+      anpanman: { 
+        name: "麵包超人兒童博物館", 
+        icon: "🥐", 
+        gQuery: "Sendai Anpanman Children's Museum & Mall", 
+        dirUrl: "https://maps.google.com/?cid=11738590975558493960" 
+      },
+      jozenji: { 
+        name: "定禪寺通", 
+        icon: "🍂", 
+        gQuery: "Jozenji-dori Avenue Sendai", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Jozenji-dori+Avenue" 
+      },
+      hachinohe_station: { 
+        name: "八戶站西口 (租車取車)", 
+        icon: "🚗", 
+        gQuery: "Hachinohe Station West Exit", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Hachinohe+Station" 
+      },
+      hasshoku: { 
+        name: "八食中心", 
+        icon: "🦐", 
+        gQuery: "Hasshoku Center Hachinohe", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Hasshoku+Center" 
+      },
+      towada_art: { 
+        name: "十和田市現代美術館", 
+        icon: "🎨", 
+        gQuery: "Towada Art Center", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Towada+Art+Center" 
+      },
+      oiraseya: { 
+        name: "奧入瀨溪流 Retreat Oiraseya", 
+        icon: "🏡", 
+        gQuery: "Retreat Oiraseya", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Retreat+Oiraseya+Towada" 
+      },
+      tsutanuma: { 
+        name: "蔦沼 (蔦七沼)", 
+        icon: "🍁", 
+        gQuery: "Tsutanuma Lake Aomori", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Tsutanuma" 
+      },
+      oirase_stream: { 
+        name: "奧入瀨溪流 (石戶/阿修羅)", 
+        icon: "💧", 
+        gQuery: "Ishigedo Oirase Stream", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Oirase+Stream+Ishigedo" 
+      },
+      towada_lake: { 
+        name: "十和田湖遊覽船", 
+        icon: "🚤", 
+        gQuery: "Lake Towada Sightseeing Boat Pier", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Lake+Towada+Sightseeing+Boat" 
+      },
+      hakkoda: { 
+        name: "八甲田山空中纜車", 
+        icon: "🚠", 
+        gQuery: "Hakkoda Ropeway", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Hakkoda+Ropeway" 
+      },
+      jogakura: { 
+        name: "城倉大橋", 
+        icon: "🌉", 
+        gQuery: "Jogakura Ohashi Bridge Aomori", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Jogakura+Ohashi" 
+      },
+      kaisenkaku: { 
+        name: "南部屋・海扇閣 (淺蟲溫泉)", 
+        icon: "♨️", 
+        gQuery: "Kaisenkaku Asamushi Onsen", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Kaisenkaku+Asamushi" 
+      },
+      warasse: { 
+        name: "睡魔之家 WA・RASSE", 
+        icon: "🏮", 
+        gQuery: "Nebuta Museum WA RASSE", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Nebuta+Museum+WA+RASSE" 
+      },
+      furukawa: { 
+        name: "古川市場 (のっけ丼)", 
+        icon: "🍚", 
+        gQuery: "Aomori Gyosai Center Nokkedon", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Aomori+Gyosai+Center" 
+      },
+      shin_aomori: { 
+        name: "新青森站西口 (租車還車)", 
+        icon: "🚄", 
+        gQuery: "Shin-Aomori Station West Exit", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Shin-Aomori+Station" 
+      },
+      superhotel: { 
+        name: "Super Hotel 仙台站東口", 
+        icon: "♨️", 
+        gQuery: "Super Hotel Sendai Station East Natural Hot Springs", 
+        dirUrl: "https://www.google.com/maps/search/?api=1&query=Super+Hotel+Sendai+Station+East" 
+      }
+    };
+
+    // 每日行程動線資料（包含站點與銜接交通車程）
+    const DAILY_ROUTES = {
+      1: {
+        steps: [
+          { key: "sendai_airport", name: "仙台機場", stay: "抵達 16:00" },
+          { key: "keihan", name: "仙台京阪飯店", stay: "Check-in 17:30" },
+          { key: "gyutan_street", name: "仙台車站牛舌通", stay: "晚餐 18:30" }
+        ],
+        transits: ["🚆 電車 25 分", "🚶 步行 10 分"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Sendai+Airport/Hotel+Keihan+Sendai/Gyutan+Do-ri"
+      },
+      2: {
+        steps: [
+          { key: "keihan", name: "仙台市區出發", stay: "上午出發" },
+          { key: "matsushima", name: "松島海岸木棧道", stay: "散步＋烤魚板" },
+          { key: "matsushima_cruise", name: "松島紅葉遊覽船", stay: "觀景約 50 分" },
+          { key: "spal", name: "仙台 S-PAL 百貨", stay: "傍晚採買" }
+        ],
+        transits: ["🚆 JR仙石線 38分", "🚶 步行 5 分", "🚆 JR仙石線 38分"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Hotel+Keihan+Sendai/Matsushima+Kaigan+Station/Matsushima+Cruise/S-PAL+Sendai"
+      },
+      3: {
+        steps: [
+          { key: "asaichi", name: "仙台朝市", stay: "08:30 採買水果" },
+          { key: "anpanman", name: "麵包超人博物館", stay: "10:00 寶貝放電" },
+          { key: "jozenji", name: "定禪寺通", stay: "下午賞櫸樹大道" },
+          { key: "keihan", name: "返回飯店休息", stay: "傍晚放鬆" }
+        ],
+        transits: ["🚶/🚇 15 分", "🚇 地鐵 12 分", "🚶 散步回飯店"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Sendai+Asaichi+Market/Sendai+Anpanman+Children's+Museum+%26+Mall/Jozenji-dori+Avenue/Hotel+Keihan+Sendai"
+      },
+      4: {
+        steps: [
+          { key: "hachinohe_station", name: "八戶站西口", stay: "11:00 取車自駕" },
+          { key: "hasshoku", name: "八食中心七厘村", stay: "烤海鮮午餐" },
+          { key: "towada_art", name: "十和田美術館", stay: "下午看草間大馬" },
+          { key: "oiraseya", name: "Retreat Oiraseya", stay: "入住煮和牛火鍋" }
+        ],
+        transits: ["🚗 車程 12 分", "🚗 車程 40 分", "🚗 車程 35 分"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Hachinohe+Station/Hasshoku+Center/Towada+Art+Center/Retreat+Oiraseya"
+      },
+      5: {
+        steps: [
+          { key: "tsutanuma", name: "蔦七沼 (蔦沼)", stay: "上午山毛櫸倒影" },
+          { key: "oirase_stream", name: "奧入瀨溪流精華段", stay: "散步石戶/阿修羅" },
+          { key: "towada_lake", name: "十和田湖遊覽船", stay: "湖心賞滿山楓紅" },
+          { key: "oiraseya", name: "返回民宿開鍋", stay: "和牛火鍋之夜" }
+        ],
+        transits: ["🚗 車程 20 分", "🚗 車程 25 分", "🚗 車程 30 分"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Retreat+Oiraseya/Tsutanuma/Oirase+Stream/Lake+Towada/Retreat+Oiraseya"
+      },
+      6: {
+        steps: [
+          { key: "hakkoda", name: "八甲田山空中纜車", stay: "上午看三段染樹海" },
+          { key: "jogakura", name: "城倉大橋", stay: "中午漫步 360 度深谷" },
+          { key: "kaisenkaku", name: "南部屋・海扇閣", stay: "海景溫泉+20:30三味線" }
+        ],
+        transits: ["🚗 車程 15 分", "🚗 海線 50 分"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Hakkoda+Ropeway/Jogakura+Ohashi/Kaisenkaku"
+      },
+      7: {
+        steps: [
+          { key: "warasse", name: "睡魔之家/A-FACTORY", stay: "上午看大燈籠採買" },
+          { key: "furukawa", name: "古川市場", stay: "中午自選海鮮丼" },
+          { key: "shin_aomori", name: "新青森站西口", stay: "13:45 還車" },
+          { key: "superhotel", name: "Super Hotel 仙台東口", stay: "新幹線回仙台泡湯" }
+        ],
+        transits: ["🚶 步行 8 分", "🚗 車程 12 分", "🚄 新幹線 90 分"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Nebuta+Museum+WA+RASSE/Aomori+Gyosai+Center/Shin-Aomori+Station/Super+Hotel+Sendai+Station+East"
+      },
+      8: {
+        steps: [
+          { key: "superhotel", name: "Super Hotel 仙台東口", stay: "退房寄放行李" },
+          { key: "spal", name: "仙台車站/三井Outlet", stay: "最後採買土產" },
+          { key: "sendai_airport", name: "仙台機場 (SDJ)", stay: "15:25 報到/17:25起飛" }
+        ],
+        transits: ["🚶 車站周邊採買", "🚆 機場快速電車 25 分"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Super+Hotel+Sendai+Station+East/S-PAL+Sendai/Sendai+Airport"
+      }
+    };
+
+    let currentActiveSpotKey = 'gyutan_street';
+    let currentDayNumber = 1;
+
+    // 行動版視角模式切換 (manual: 手冊行程, map: 地圖檢視)
+    function setMobileMode(mode) {
+      document.body.classList.remove('mode-manual', 'mode-map');
+      document.body.classList.add(`mode-${mode}`);
+
+      // 同步頂部切換按鈕狀態
+      const btnManual = document.getElementById('btn-tab-manual');
+      const btnMap = document.getElementById('btn-tab-map');
+      if (btnManual && btnMap) {
+        btnManual.classList.toggle('active', mode === 'manual');
+        btnMap.classList.toggle('active', mode === 'map');
+      }
+
+      // 同步底部導航列狀態
+      const navManual = document.getElementById('nav-btn-manual');
+      const navMap = document.getElementById('nav-btn-map');
+      if (navManual && navMap) {
+        navManual.classList.toggle('active', mode === 'manual');
+        navMap.classList.toggle('active', mode === 'map');
+      }
+
+      // 若切換至地圖，平滑滾動至地圖區域
+      if (mode === 'map' && window.innerWidth <= 960) {
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+      }
+    }
+
+    // 點擊景點的通用處理：在手機上支援直接切換並聚焦
+    function handleSpotClick(spotKey) {
+      showGoogleSpot(spotKey);
+
+      // 如果是手機螢幕且在手冊模式，給予溫馨提示或自動切換
+      if (window.innerWidth <= 960) {
+        setMobileMode('map');
+      }
+    }
+
+    function handleCustomSpot(name, query) {
+      showGoogleSpotCustom(name, query);
+      if (window.innerWidth <= 960) {
+        setMobileMode('map');
+      }
+    }
+
+    // 核心函數：在右側即時切換原生 Google 地圖檢視
+    function showGoogleSpot(spotKey) {
+      const spot = SPOTS[spotKey];
+      if (!spot) return;
+      currentActiveSpotKey = spotKey;
+
+      const iframe = document.getElementById('google-maps-iframe');
+      const badge = document.getElementById('current-spot-badge');
+      const extLink = document.getElementById('current-gmap-external-link');
+      const mobileExtLink = document.getElementById('mobile-current-ext-nav');
+
+      // 更新原生 Google Maps 嵌入 URL
+      const encodedQuery = encodeURIComponent(spot.gQuery);
+      iframe.src = `https://maps.google.com/maps?q=${encodedQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+
+      // 更新狀態文字與外部導航連結
+      badge.innerHTML = `${spot.icon} ${spot.name}`;
+      extLink.href = spot.dirUrl;
+      if (mobileExtLink) {
+        mobileExtLink.href = spot.dirUrl;
+      }
+
+      // 更新快捷列 active 狀態
+      document.querySelectorAll('.quick-pin-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.key === spotKey);
+      });
+      document.querySelectorAll('.step-station-card').forEach(card => {
+        card.classList.toggle('active-pin', card.dataset.key === spotKey);
+      });
+    }
+
+    // 自訂景點彈性預覽 (例如牛舌 5 大名店快速切換)
+    function showGoogleSpotCustom(name, searchQuery) {
+      const iframe = document.getElementById('google-maps-iframe');
+      const badge = document.getElementById('current-spot-badge');
+      const extLink = document.getElementById('current-gmap-external-link');
+      const mobileExtLink = document.getElementById('mobile-current-ext-nav');
+
+      const encodedQuery = encodeURIComponent(searchQuery);
+      iframe.src = `https://maps.google.com/maps?q=${encodedQuery}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+
+      badge.innerHTML = `🥩 ${name}`;
+      const searchUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`;
+      extLink.href = searchUrl;
+      if (mobileExtLink) {
+        mobileExtLink.href = searchUrl;
+      }
+    }
+
+    // 切換動線面板 Day
+    function switchDayRoute(dayNum) {
+      currentDayNumber = dayNum;
+      document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', (idx + 1) === dayNum);
+      });
+
+      const routeData = DAILY_ROUTES[dayNum];
+      const container = document.getElementById('route-steps-container');
+      const quickPillContainer = document.getElementById('quick-spots-container');
+      const gmapDayBtn = document.getElementById('gmap-day-route-btn');
+      if (!routeData || !container) return;
+
+      // 設定當日 Google Maps 多點導航網址
+      gmapDayBtn.href = routeData.gmapMultiUrl;
+
+      // 渲染置頂橫向站點串聯卡片
+      let html = '';
+      let quickHtml = '';
+      routeData.steps.forEach((step, idx) => {
+        const spot = SPOTS[step.key] || {};
+        html += `
+          <div class="step-station-card ${step.key === currentActiveSpotKey ? 'active-pin' : ''}" data-key="${step.key}" onclick="handleSpotClick('${step.key}')">
+            <span class="step-badge">${idx + 1}</span>
+            <div>
+              <div class="step-name">${spot.icon || '📍'} ${step.name}</div>
+              <div class="step-stay">${step.stay}</div>
+            </div>
+          </div>
+        `;
+
+        quickHtml += `
+          <button class="quick-pin-pill ${step.key === currentActiveSpotKey ? 'active' : ''}" data-key="${step.key}" onclick="showGoogleSpot('${step.key}')">
+            <span>${spot.icon || '📍'}</span>
+            <span>${step.name}</span>
+          </button>
+        `;
+
+        if (idx < routeData.steps.length - 1 && routeData.transits[idx]) {
+          html += `
+            <div class="transit-arrow">
+              <span>➔ ${routeData.transits[idx]}</span>
+            </div>
+          `;
+        }
+      });
+
+      container.innerHTML = html;
+      quickPillContainer.innerHTML = quickHtml;
+
+      // 切換至當天第一個景點
+      if (routeData.steps.length > 0) {
+        showGoogleSpot(routeData.steps[0].key);
+      }
+
+      // 如果處於手冊模式，平滑滾動左側對應的 Day 行程卡片
+      const dayCard = document.getElementById(`day-card-${dayNum}`);
+      if (dayCard) {
+        dayCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // 初始化載入 Day 1
+    window.addEventListener('DOMContentLoaded', () => {
+      switchDayRoute(1);
+    });
+  </script>
+</body>
+</html>
