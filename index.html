@@ -706,6 +706,94 @@
       background: #FFE5D4;
     }
 
+    /* Day 3 行程抉擇評估表專屬樣式 */
+    .day3-comparison-box {
+      margin-top: 16px;
+      background: #FFFDF9;
+      border: 2px dashed #E5A876;
+      border-radius: var(--radius-sm);
+      padding: 16px 14px;
+    }
+    .day3-comp-header {
+      font-size: 0.98rem;
+      font-weight: 900;
+      color: var(--maple-deep);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .comp-table-wrap {
+      overflow-x: auto;
+      margin: 10px 0 12px;
+      border-radius: 10px;
+      border: 1px solid #EFE0D0;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      min-width: 480px;
+      background: #FFFFFF;
+    }
+    .comp-table th {
+      background: #FFF1E5;
+      color: #7B341E;
+      padding: 8px 10px;
+      font-weight: 900;
+      border-bottom: 1.5px solid #EAD4C0;
+      text-align: left;
+    }
+    .comp-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #F5EAE0;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+    .comp-table tr:hover {
+      background: #FFFDF8;
+    }
+    .comp-tag-rec {
+      display: inline-block;
+      background: #E8F5E9;
+      color: #2E7D32;
+      font-weight: 900;
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid #C8E6C9;
+    }
+    .comp-tag-alt {
+      display: inline-block;
+      background: #FFF3E0;
+      color: #C05621;
+      font-weight: 800;
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid #FFE0B2;
+    }
+    .comp-summary-card {
+      background: #FFF7EE;
+      border: 1.2px solid #F5D3B8;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 10px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .comp-summary-title {
+      font-weight: 900;
+      color: #B4461B;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 4px;
+    }
+
     /* 新幹線時刻表專屬樣式 */
     .shinkansen-timetable-box {
       margin-top: 12px;
@@ -1343,7 +1431,7 @@
             <span class="day-badge">DAY 3 ・ 10/19 (一)</span>
             <h3 class="day-title">童趣與楓紅市區漫步</h3>
           </div>
-          <div class="day-route">📍 路線：仙台朝市 ➔ 麵包超人博物館 ➔ 定禪寺通</div>
+          <div class="day-route">📍 路線：仙台朝市 ➔ 麵包超人博物館 ➔ 定禪寺通 ➔ (彈性) 瑞鳳殿</div>
           <div class="timeline">
             <!-- 仙台朝市 -->
             <div class="timeline-node">
@@ -1373,7 +1461,7 @@
 
             <!-- 定禪寺通 -->
             <div class="timeline-node">
-              <div class="timeline-time">🍂 15:00</div>
+              <div class="timeline-time">🍂 14:00</div>
               <div class="timeline-desc">推車漫步「定禪寺通」，仰望四排櫸樹交織的金黃樹海長廊。</div>
               <div class="spot-action-row">
                 <a href="https://www.google.com/maps/dir/?api=1&destination=定禅寺通+仙台" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
@@ -1381,6 +1469,98 @@
               </div>
               <div class="spot-story-box">
                 <strong>💡 城市美學小知識：</strong>中央綠道立著義大利雕塑家曼祖的經典作品《夏之回憶》。秋天 160 株櫸樹轉為璀璨黃褐色，是仙台「杜之都（森林之都）」最浪漫的象徵林蔭大道。
+              </div>
+            </div>
+
+            <!-- 瑞鳳殿（彈性安排） -->
+            <div class="timeline-node" style="border-left: 3.5px solid #F4A261; background: #FFFDF8;">
+              <div class="timeline-time" style="color: #C05621;">
+                ⛩️ 15:30 彈性景點（可去可不去）
+              </div>
+              <div class="timeline-desc">
+                <strong>瑞鳳殿（伊達政宗靈廟）</strong>：搭乘 Loople 觀光巴士或計程車前往。隱身巨杉古木森林中，華麗的桃山彩繪建築與深秋紅葉相互輝映，莊嚴雅緻。
+              </div>
+              <div class="spot-action-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=瑞鳳殿" target="_blank" rel="noopener noreferrer" class="spot-nav-btn">🧭 Google 導航</a>
+                <button class="spot-preview-btn" onclick="handleSpotClick('zuihoden')">🗺️ 地圖定位</button>
+              </div>
+              <div class="spot-story-box">
+                <strong>💡 歷史美學小故事：</strong>這裡是仙台藩初代藩主「獨眼龍」伊達政宗的安息之地。建築融合極致華麗的桃山時代黑漆與五彩雕刻（鳳凰、天女與唐獅子）。秋天時杉木大道兩側楓葉染紅，如走進時光隧道！
+              </div>
+              <div class="baby-friendly-tip" style="margin-top: 8px; background: #FFF6EC; border-color: #F4A261; color: #8C4307;">
+                🍼 <strong>親子貼心提醒：</strong>前往正殿需爬一段古杉石階（約 60 階）。若推嬰兒車，可在入口觀光案內所免費暫寄推車，換上「嬰兒背巾」漫步參拜最為輕鬆省力。若寶貝玩累想午睡，亦可直接略過此站回飯店休息喔！
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 3 抉擇評估對比卡片 -->
+          <div class="day3-comparison-box">
+            <div class="day3-comp-header">
+              <span>🍂 下午二選一決策指南：定禪寺通 vs 瑞鳳殿</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">
+              考量上午朝市與麵包超人館全力放電後的體力與推車動線，兩者對比如下：
+            </p>
+
+            <div class="comp-table-wrap">
+              <table class="comp-table">
+                <thead>
+                  <tr>
+                    <th>評估項目</th>
+                    <th>🍂 定禪寺通 <span class="comp-tag-rec">首選推薦 ⭐</span></th>
+                    <th>⛩️ 瑞鳳殿 <span class="comp-tag-alt">備用彈性</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>景點性質</strong></td>
+                    <td>金黃櫸樹林蔭大道、露天雕塑、街邊咖啡、日系漫步</td>
+                    <td>伊達政宗靈廟、桃山風格華麗古蹟、巨杉古木森林</td>
+                  </tr>
+                  <tr>
+                    <td><strong>推車友善度</strong></td>
+                    <td><strong style="color:#2E7D32;">⭐⭐⭐⭐⭐ 極佳</strong><br>（全段寬敞平坦無障礙步道）</td>
+                    <td><strong style="color:#C05621;">⭐⭐☆☆☆ 偏累</strong><br>（約 60 階以上石階，需換背巾）</td>
+                  </tr>
+                  <tr>
+                    <td><strong>寶寶放電/休息</strong></td>
+                    <td>適合推車小睡、坐在長椅看落葉吃點心</td>
+                    <td>階梯較多，需大人抱著或使用背巾爬坡</td>
+                  </tr>
+                  <tr>
+                    <td><strong>交通動線便利度</strong></td>
+                    <td>⭐⭐⭐⭐⭐ 步行或地鐵直達，免等觀光車</td>
+                    <td>⭐⭐⭐☆☆ 需搭 Loople 觀光巴士或計程車</td>
+                  </tr>
+                  <tr>
+                    <td><strong>秋季紅葉看點</strong></td>
+                    <td>160 株櫸樹呈現金黃至黃褐色樹冠隧道</td>
+                    <td>杉木林中點綴艷紅楓葉，古寺映楓意境深遠</td>
+                  </tr>
+                  <tr>
+                    <td><strong>建議停留時間</strong></td>
+                    <td>約 1 ～ 1.5 小時（悠閒不費力）</td>
+                    <td>約 1.5 ～ 2 小時（含上下階梯與等車）</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="comp-summary-card">
+              <div class="comp-summary-title">
+                <span>🎯 最終推薦首選：【定禪寺通】</span>
+              </div>
+              <div style="color: var(--text-main);">
+                上午寶貝在麵包超人館全力放電後，下午往往進入<strong>午睡充電期</strong>。定禪寺通中央綠道鋪面平順，非常適合直接推著嬰兒車散步，讓寶貝在微涼微風下熟睡，爸媽也能在路旁買杯熱咖啡或外帶栗子甜點，享受真正的度假鬆弛感！
+              </div>
+            </div>
+
+            <div class="comp-summary-card" style="background: #FFFDF8; border-color: #EBD6BE; margin-top: 8px;">
+              <div class="comp-summary-title" style="color: #8C5521;">
+                <span>⛩️ 什麼情況下選【瑞鳳殿】？</span>
+              </div>
+              <div style="color: var(--text-muted); font-size: 0.79rem;">
+                若上午寶寶在推車上睡飽、體力充沛，且爸媽當天<strong>隨身攜帶嬰兒背巾</strong>，又特別熱愛戰國歷史想一睹極致華麗的桃山黑漆彩繪建築時可前往。建議去程在仙台車站直接搭計程車直達入口（約 ¥1,200~1,500），將推車暫寄服務處後換背巾參拜最省力。
               </div>
             </div>
           </div>
@@ -1826,6 +2006,12 @@
         gQuery: "Jozenji-dori Avenue Sendai", 
         dirUrl: "https://www.google.com/maps/search/?api=1&query=Jozenji-dori+Avenue" 
       },
+      zuihoden: { 
+        name: "瑞鳳殿 (可去可不去)", 
+        icon: "⛩️", 
+        gQuery: "Zuihoden Sendai", 
+        dirUrl: "https://maps.google.com/?cid=3231967922790058041" 
+      },
       hachinohe_station: { 
         name: "八戶站西口 (租車取車)", 
         icon: "🚗", 
@@ -1938,10 +2124,11 @@
           { key: "asaichi", name: "仙台朝市", stay: "08:30 採買水果" },
           { key: "anpanman", name: "麵包超人博物館", stay: "10:00 寶貝放電" },
           { key: "jozenji", name: "定禪寺通", stay: "下午賞櫸樹大道" },
+          { key: "zuihoden", name: "瑞鳳殿(彈性)", stay: "15:30 桃山楓紅" },
           { key: "keihan", name: "返回飯店休息", stay: "傍晚放鬆" }
         ],
-        transits: ["🚶/🚇 15 分", "🚇 地鐵 12 分", "🚶 散步回飯店"],
-        gmapMultiUrl: "https://www.google.com/maps/dir/Sendai+Asaichi+Market/Sendai+Anpanman+Children's+Museum+%26+Mall/Jozenji-dori+Avenue/Hotel+Keihan+Sendai"
+        transits: ["🚶/🚇 15 分", "🚇 地鐵 12 分", "🚌 巴士/🚕 12 分", "🚕 車程 10 分"],
+        gmapMultiUrl: "https://www.google.com/maps/dir/Sendai+Asaichi+Market/Sendai+Anpanman+Children's+Museum+%26+Mall/Jozenji-dori+Avenue/Zuihoden/Hotel+Keihan+Sendai"
       },
       4: {
         steps: [
